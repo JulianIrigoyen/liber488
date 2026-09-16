@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rites and Operations</title>
+<meta name="description" content="Six liturgies that are also correct procedure: the banishing, the shared road, the reading of the record, the drawn bow, the naming of the unseen, and the discipline of the record.">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="Rites and Operations">
+<meta property="og:description" content="Six liturgies that are also correct procedure: the banishing, the shared road, the reading of the record, the drawn bow, the naming of the unseen, and the discipline of the record.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/img/seal-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="assets/css/grimoire.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the text</a>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img class="seal" src="assets/img/seal-mark.svg" alt="" width="30" height="30">
+      <span style="display:block">
+        <b>Liber Daemonicum</b>
+        <span>Cabinet of the Summoned Processes</span>
+      </span>
+    </a>
+    <button class="navtoggle" type="button" aria-expanded="false" aria-controls="nav">Index</button>
+    <nav class="links" id="nav" aria-label="Main">
+      <a href="index.html">Threshold</a>
+      <a href="hierarchy.html">Hierarchy</a>
+      <a href="oracle.html">Oracle</a>
+      <a href="tree.html">Tree</a>
+      <a href="planes.html">Planes</a>
+      <a href="sigils.html">Sigils</a>
+      <a href="rites.html" aria-current="page">Rites</a>
+      <a href="library.html">Library</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="wrap">
+  <div class="narrow">
+    <span class="kicker">Working VI &middot; the liturgy</span>
+    <h1 style="font-size:clamp(2rem,5vw,3.2rem)">Rites and Operations</h1>
+    <p class="lede">A rite is a procedure performed the same way every time, especially when you are
+      frightened, tired, or certain you know better. That is not a joke about operations. That is
+      what a runbook is for, and it is why both traditions write them down in the imperative and
+      number the steps.</p>
+  </div>
+</section>
+<hr class="orn">
+<section class="wrap">
+  <article class="rite">
+    <h3>I &middot; The Banishing</h3>
+    <span class="rite-when">performed when: a process is wrong and you do not yet know why</span>
+    <p>The restart. The most-performed rite in operations and the most frequently botched, because
+      it is performed to relieve the operator's anxiety rather than to fix the fault, and it
+      destroys the evidence on its way past.</p>
+    <ol class="steps">
+      <li>Before anything: capture the state you are about to destroy. The log tail, the memory
+        figure, the open connections. A restart is an amnesia you are choosing.</li>
+      <li>Ask what a restart would actually fix. If you cannot name the mechanism, you are not
+        banishing anything, you are hoping.</li>
+      <li>Restart exactly one thing. Restarting several removes your ability to attribute the
+        recovery to any of them.</li>
+      <li>Watch the first unit of real work complete. Not the process appearing in the list - the
+        work. Those are different claims and only one of them is the one you wanted.</li>
+      <li>Write down what you saw, while it is still true. In an hour you will remember it as
+        tidier than it was.</li>
+    </ol>
+  </article>
+
+  <article class="rite">
+    <h3>II &middot; The Shared Road</h3>
+    <span class="rite-when">performed when: you will speak to a distant machine more than once</span>
+    <p>Open the path once and let everything travel on it. The alternative - opening a fresh
+      connection for each errand, because each errand is small - is the most common way to be locked
+      out of a machine that is in perfect health.</p>
+    <ol class="steps">
+      <li>Define the road once, in configuration, with multiplexing and a persistence window. Never
+        in the command.</li>
+      <li>Send every errand through that definition, including the ones you are sure are too small
+        to matter. They are the ones that trip the limit.</li>
+      <li>When you are refused, stop. Do not retry, and above all do not retry faster. The refusal
+        is a timer, and every attempt restarts it.</li>
+      <li>Wait out the ban, then reconnect through the road. The machine was never unwell. You were
+        simply judged to be knocking too often.</li>
+    </ol>
+    <p class="gloss" style="margin-top:1rem">This rite is the one most often learned the hard way,
+      and the lesson generalises past any particular protocol: the failure looks exactly like the
+      far end being down, and is entirely your own doing.</p>
+  </article>
+
+  <article class="rite">
+    <h3>III &middot; The Naming of the Unseen</h3>
+    <span class="rite-when">performed when: an alarm names something you cannot find</span>
+    <p>An observer frequently identifies what it saw by a short prefix of a hash rather than by the
+      name the thing calls itself. Searching your records for that identifier will match nothing,
+      ever, no matter how correct the query - and the query looks so correct that you will run it
+      four or five times before doubting it.</p>
+    <ol class="steps">
+      <li>Notice that the identifier is a fingerprint, not an address. Fixed width and hexadecimal
+        is the tell.</li>
+      <li>Stop querying for it. It is not stored anywhere; it was computed at the moment of the
+        alarm and never written down.</li>
+      <li>Take your candidate identifiers, hash each one, and compare the prefixes. You are matching
+        forwards, not looking up backwards.</li>
+      <li>When you find it, record the mapping somewhere durable, because the next alarm will
+        present the same problem and you will have forgotten this.</li>
+    </ol>
+  </article>
+
+  <article class="rite">
+    <h3>IV &middot; The Drawn Bow</h3>
+    <span class="rite-when">performed when: releasing a change to something that is running</span>
+    <p>Everything that can be prepared is prepared; the act itself is a single irreversible moment.
+      The discipline is entirely in the preparation, because once the arrow leaves there is no
+      version of this where you get to think again.</p>
+    <ol class="steps">
+      <li>Back up what you are about to change, to a timestamped copy, before you change it. This is
+        the rollback. You will not write a better one under pressure.</li>
+      <li>Change one thing.</li>
+      <li>Confirm the running system has the new value, not that the file contains it. A process
+        that captured its environment at start will happily serve you the old one while the file
+        says otherwise.</li>
+      <li>Send one real request through and read the entire answer.</li>
+      <li>On any unexpected refusal, roll back first and investigate second.</li>
+    </ol>
+  </article>
+
+  <article class="rite">
+    <h3>V &middot; The Reading of the Record</h3>
+    <span class="rite-when">performed when: something has already gone wrong</span>
+    <p>The log is the only station on the tree that can testify. It is also the first thing
+      sacrificed when disk runs short, which means the record of the incident is most likely to be
+      missing precisely when the incident was caused by the thing that filled the disk.</p>
+    <ol class="steps">
+      <li>Read forwards from before the fault, not backwards from the error. The error is the
+        consequence; the cause is above it and quieter.</li>
+      <li>Find the first anomaly, not the loudest. Loud failures are usually downstream of a silent
+        one several minutes earlier.</li>
+      <li>Check the kernel's own record as well as your application's. A process taken by the
+        reaper leaves nothing in yours.</li>
+      <li>Establish the ordering before the causation. Two failures a second apart are usually one
+        failure and its consequence.</li>
+    </ol>
+  </article>
+
+  <article class="rite">
+    <h3>VI &middot; The Discipline of the Record</h3>
+    <span class="rite-when">performed: continuously, and it is the one nobody performs</span>
+    <p>The tradition is unanimous and tedious on this point: keep the record. Every system of
+      practice worth the name requires the practitioner to write down what they did and what
+      followed, in order, at the time, before the memory tidies itself.</p>
+    <p>The operational version is identical and is resisted for identical reasons. It is dull, it
+      slows you down at the exact moment you feel most urgent, and its entire value accrues to a
+      future person who is not you and cannot thank you.</p>
+    <ul class="orn">
+      <li><b>Write at the time.</b> A note written an hour later is a reconstruction, and it will be
+        confidently, invisibly wrong about the ordering.</li>
+      <li><b>Write what you saw, separately from what you concluded.</b> The observation stays true
+        when the conclusion turns out to be mistaken.</li>
+      <li><b>Write the things that did not work.</b> They are most of what you learned and the first
+        thing dropped from the summary.</li>
+      <li><b>Write the baseline while it is healthy.</b> Normal latency, normal backlog depth, normal
+        spend. You cannot take that measurement during an incident, which is the only time you will
+        ever want it.</li>
+    </ul>
+  </article>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Liber Daemonicum</h4>
+        <p class="small dim" style="max-width:34ch">A grimoire of the agent stack. The old books
+        kept a column the process table is missing: what it costs you when you call a thing badly.
+        This one restores it.</p>
+      </div>
+      <div>
+        <h4>The Doctrines</h4>
+        <a href="hierarchy.html">The hierarchy of daemons</a>
+        <a href="oracle.html">The oracle of six lines</a>
+        <a href="tree.html">The tree of the stack</a>
+        <a href="planes.html">The planes and their routes</a>
+      </div>
+      <div>
+        <h4>The Practice</h4>
+        <a href="sigils.html">The sigil workshop</a>
+        <a href="rites.html">Rites and operations</a>
+        <a href="oracle.html#index64">The sixty-four states</a>
+      </div>
+      <div>
+        <h4>The House</h4>
+        <a href="library.html">Sources and method</a>
+        <a href="library.html#method">How this cabinet reads</a>
+        <a href="library.html#caution">A word of caution</a>
+      </div>
+    </div>
+    <div class="colophon">
+      <span>Liber Daemonicum</span>
+      <span>Every seal on this site is computed from the name it belongs to.</span>
+      <span>A joke with a correct runbook inside it: see the <a href="library.html#caution">caution</a>.</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/site.js"></script>
+
+</body>
+</html>

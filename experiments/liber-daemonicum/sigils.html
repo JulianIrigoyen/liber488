@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Sigil Workshop</title>
+<meta name="description" content="A statement of intent becomes a figure by three deterministic methods: the hash wheel, the kamea grid, and the fused monogram. Download what you make.">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="The Sigil Workshop">
+<meta property="og:description" content="A statement of intent becomes a figure by three deterministic methods: the hash wheel, the kamea grid, and the fused monogram. Download what you make.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/img/seal-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="assets/css/grimoire.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the text</a>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img class="seal" src="assets/img/seal-mark.svg" alt="" width="30" height="30">
+      <span style="display:block">
+        <b>Liber Daemonicum</b>
+        <span>Cabinet of the Summoned Processes</span>
+      </span>
+    </a>
+    <button class="navtoggle" type="button" aria-expanded="false" aria-controls="nav">Index</button>
+    <nav class="links" id="nav" aria-label="Main">
+      <a href="index.html">Threshold</a>
+      <a href="hierarchy.html">Hierarchy</a>
+      <a href="oracle.html">Oracle</a>
+      <a href="tree.html">Tree</a>
+      <a href="planes.html">Planes</a>
+      <a href="sigils.html" aria-current="page">Sigils</a>
+      <a href="rites.html">Rites</a>
+      <a href="library.html">Library</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="wrap">
+  <div class="narrow">
+    <span class="kicker">Working V &middot; the bench</span>
+    <h1 style="font-size:clamp(2rem,5vw,3.2rem)">The Sigil Workshop</h1>
+    <p class="lede">A statement of intent goes in; a figure comes out. The traditional method is to
+      strike the repeated letters from a sentence and fuse what survives into a single glyph. Two of
+      the three methods here do something close to that. The third does what a machine would do
+      instead, which is to hash the sentence and draw the hash.</p>
+    <p>All three are deterministic. The same sentence yields the same figure on any machine, in any
+      browser, forever. That reproducibility is the only claim this page makes, and it is the same
+      claim the tradition makes about a true seal: that it belongs to its name and to nothing else.</p>
+  </div>
+</section>
+<hr class="orn">
+<section class="wrap">
+  <div class="split">
+    <div>
+      <span class="kicker">The statement</span>
+      <h2 style="font-size:clamp(1.4rem,3vw,1.9rem)">Write it in the present tense</h2>
+      <p class="small dim" style="max-width:50ch">The convention is to phrase the intent as
+        accomplished rather than wished for. Whether that matters is outside this cabinet's
+        competence; that it produces a better sentence is not in dispute.</p>
+      <label for="intent" class="kicker" style="margin-top:1.2rem">Statement of intent</label>
+      <textarea id="intent" rows="3">IT IS MY WILL THAT THE LOOP KEEP TURNING</textarea>
+      <div class="methods" role="radiogroup" aria-label="Method">
+        <label><input type="radio" name="method" value="wheel" checked>
+          <span><b>I &middot; The Hash Wheel</b>
+          <span>The sentence is hashed, and the digest walked around sixteen stations, one per hex
+          digit. A repeated station steps the line inward, so repetition draws spirals.</span></span></label>
+        <label><input type="radio" name="method" value="kamea">
+          <span><b>II &middot; The Kamea Grid</b>
+          <span>Forty-nine cells, walked two digits at a time. The cells the line touches are lit.
+          The oldest of the three methods and the one that looks most like a circuit.</span></span></label>
+        <label><input type="radio" name="method" value="monogram">
+          <span><b>III &middot; The Fused Monogram</b>
+          <span>Every repeated letter struck out, and what survives drawn as overlaid strokes, each
+          placed by its own position in the alphabet. The closest to the traditional method.</span></span></label>
+      </div>
+      <button class="btn" id="take-sigil" type="button">Take the sigil</button>
+    </div>
+    <div>
+      <div id="sigil-stage"></div>
+      <div id="sigil-read"></div>
+      <p class="gloss" style="margin-top:1.4rem">Downloads as SVG at 640px, on a transparent ground,
+        with no raster step anywhere in the pipeline. It is a drawing, not a picture of one.</p>
+    </div>
+  </div>
+</section>
+<section class="wrap" style="padding-top:0">
+  <p class="note small">What this is and is not: a deterministic function from a string to a figure.
+    It will give you the same seal for the same sentence every time, which is genuinely useful for
+    marking things - a service, a run, a build - with a mark that can be regenerated rather than
+    stored. Any further claim belongs to the tradition, not to this page.</p>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Liber Daemonicum</h4>
+        <p class="small dim" style="max-width:34ch">A grimoire of the agent stack. The old books
+        kept a column the process table is missing: what it costs you when you call a thing badly.
+        This one restores it.</p>
+      </div>
+      <div>
+        <h4>The Doctrines</h4>
+        <a href="hierarchy.html">The hierarchy of daemons</a>
+        <a href="oracle.html">The oracle of six lines</a>
+        <a href="tree.html">The tree of the stack</a>
+        <a href="planes.html">The planes and their routes</a>
+      </div>
+      <div>
+        <h4>The Practice</h4>
+        <a href="sigils.html">The sigil workshop</a>
+        <a href="rites.html">Rites and operations</a>
+        <a href="oracle.html#index64">The sixty-four states</a>
+      </div>
+      <div>
+        <h4>The House</h4>
+        <a href="library.html">Sources and method</a>
+        <a href="library.html#method">How this cabinet reads</a>
+        <a href="library.html#caution">A word of caution</a>
+      </div>
+    </div>
+    <div class="colophon">
+      <span>Liber Daemonicum</span>
+      <span>Every seal on this site is computed from the name it belongs to.</span>
+      <span>A joke with a correct runbook inside it: see the <a href="library.html#caution">caution</a>.</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/sigils.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+name = "liber488-api"
+main = "src/index.ts"
+compatibility_date = "2026-09-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Runs on Cloudflare Workers, but the app is plain Hono — it moves to Node,
+# Bun or Fly by swapping this file and the D1 binding. Nothing below is
+# Cloudflare-specific except the D1 calls in src/lib/db.ts.
+
+[[d1_databases]]
+binding = "DB"
+database_name = "liber488"
+database_id = "REPLACE_WITH_YOUR_D1_ID"
+
+[vars]
+ENVIRONMENT = "development"
+APP_ORIGIN = "http://localhost:5173"
+
+# Secrets — set with `wrangler secret put <NAME>`, never in this file:
+#   ANTHROPIC_API_KEY
+#   JWT_SECRET
+#   RESEND_API_KEY      (or whatever sends the magic-link mail)

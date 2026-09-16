@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Oracle of Six Lines</title>
+<meta name="description" content="Six services, each answering or silent, give exactly sixty-four system states. A named judgment and a real counsel for every one, with a console you can set to your own.">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="The Oracle of Six Lines">
+<meta property="og:description" content="Six services, each answering or silent, give exactly sixty-four system states. A named judgment and a real counsel for every one, with a console you can set to your own.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/img/seal-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="assets/css/grimoire.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the text</a>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img class="seal" src="assets/img/seal-mark.svg" alt="" width="30" height="30">
+      <span style="display:block">
+        <b>Liber Daemonicum</b>
+        <span>Cabinet of the Summoned Processes</span>
+      </span>
+    </a>
+    <button class="navtoggle" type="button" aria-expanded="false" aria-controls="nav">Index</button>
+    <nav class="links" id="nav" aria-label="Main">
+      <a href="index.html">Threshold</a>
+      <a href="hierarchy.html">Hierarchy</a>
+      <a href="oracle.html" aria-current="page">Oracle</a>
+      <a href="tree.html">Tree</a>
+      <a href="planes.html">Planes</a>
+      <a href="sigils.html">Sigils</a>
+      <a href="rites.html">Rites</a>
+      <a href="library.html">Library</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="wrap">
+  <div class="narrow">
+    <span class="kicker">Doctrine II &middot; the oracle</span>
+    <h1 style="font-size:clamp(2rem,5vw,3.2rem)">The Oracle of Six Lines</h1>
+    <p class="lede">A hexagram is six binary lines. So is a health check. Six services, each either
+      answering or not, give exactly sixty-four states - and a book of sixty-four judgments is a
+      form the tradition already worked out and indexed.</p>
+    <p>Read from the bottom upward, as the oracles are read. A whole line answers; a broken line
+      does not. You may cast the lines and let them fall, which is the traditional use, or set them
+      to what your own system is actually doing, which turns the book into a lookup table. It was
+      always a lookup table.</p>
+  </div>
+</section>
+<hr class="orn">
+<section class="wrap" id="consult">
+  <div class="split wide-right">
+    <div>
+      <span class="kicker">Set the six lines</span>
+      <h2 style="font-size:clamp(1.4rem,3vw,1.9rem)">Which services answer?</h2>
+      <p class="small dim" style="max-width:46ch">Switch each line to match your own system, or cast
+        and let them fall where they will.</p>
+      <div id="toggles" style="margin-top:1.2rem"></div>
+      <p style="margin-top:1.2rem">
+        <button class="btn" id="cast" type="button">Cast the lines</button>
+        <button class="btn ghost" id="allwell" type="button">All well</button>
+      </p>
+    </div>
+    <div class="reading" id="reading"></div>
+  </div>
+</section>
+<section class="wrap" style="padding-top:0">
+  <div class="narrow">
+    <h2 style="font-size:clamp(1.4rem,3vw,1.9rem)">Why these six</h2>
+    <p>They are the six stages every message passes through, in order, and each one fails in a way
+      the others cannot cover for. The ordering is the diagnostic: a fault at line three means
+      everything above it is idle and healthy, and restarting any of it will teach you nothing.</p>
+  </div>
+  <div class="tablewrap" style="margin-top:1.4rem">
+    <table>
+      <thead><tr><th>Line</th><th>Station</th><th>Office</th><th>Its characteristic failure</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">L6</td><td class="mono">watchdog</td><td>the Eye</td><td>Everything looks fine because nothing is looking.</td></tr>
+        <tr><td class="mono">L5</td><td class="mono">delivery</td><td>the Mouth</td><td>Full cost paid, nothing delivered. Never re-run; the answers already exist.</td></tr>
+        <tr><td class="mono">L4</td><td class="mono">brain</td><td>the Mind</td><td>Refusal read as outage. Check your route and credential first.</td></tr>
+        <tr><td class="mono">L3</td><td class="mono">replay</td><td>the Pulse</td><td>Every process green, no work done. The one that hides from process monitoring.</td></tr>
+        <tr><td class="mono">L2</td><td class="mono">store</td><td>the Vault</td><td>Serving continues, nothing is recorded, and you find out much later.</td></tr>
+        <tr><td class="mono">L1</td><td class="mono">intake</td><td>the Ear</td><td>The door looks open from outside and admits nothing.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<hr class="orn">
+<section class="wrap">
+  <div class="narrow">
+    <span class="kicker">The full index</span>
+    <h2 style="font-size:clamp(1.4rem,3vw,1.9rem)">The sixty-four states</h2>
+    <p class="small dim">In binary order, from total outage to full health. Choose any to read it.</p>
+  </div>
+  <div id="index64"></div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Liber Daemonicum</h4>
+        <p class="small dim" style="max-width:34ch">A grimoire of the agent stack. The old books
+        kept a column the process table is missing: what it costs you when you call a thing badly.
+        This one restores it.</p>
+      </div>
+      <div>
+        <h4>The Doctrines</h4>
+        <a href="hierarchy.html">The hierarchy of daemons</a>
+        <a href="oracle.html">The oracle of six lines</a>
+        <a href="tree.html">The tree of the stack</a>
+        <a href="planes.html">The planes and their routes</a>
+      </div>
+      <div>
+        <h4>The Practice</h4>
+        <a href="sigils.html">The sigil workshop</a>
+        <a href="rites.html">Rites and operations</a>
+        <a href="oracle.html#index64">The sixty-four states</a>
+      </div>
+      <div>
+        <h4>The House</h4>
+        <a href="library.html">Sources and method</a>
+        <a href="library.html#method">How this cabinet reads</a>
+        <a href="library.html#caution">A word of caution</a>
+      </div>
+    </div>
+    <div class="colophon">
+      <span>Liber Daemonicum</span>
+      <span>Every seal on this site is computed from the name it belongs to.</span>
+      <span>A joke with a correct runbook inside it: see the <a href="library.html#caution">caution</a>.</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/site.js"></script>
+<script src="assets/data/states.js"></script>
+<script src="assets/js/oracle.js"></script>
+</body>
+</html>

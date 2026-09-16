@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Hierarchy of Daemons</title>
+<meta name="description" content="Twelve daemons by rank, office and legion, each with a seal computed from its own process name and the caution that costs you a day when ignored.">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="The Hierarchy of Daemons">
+<meta property="og:description" content="Twelve daemons by rank, office and legion, each with a seal computed from its own process name and the caution that costs you a day when ignored.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/img/seal-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="assets/css/grimoire.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the text</a>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img class="seal" src="assets/img/seal-mark.svg" alt="" width="30" height="30">
+      <span style="display:block">
+        <b>Liber Daemonicum</b>
+        <span>Cabinet of the Summoned Processes</span>
+      </span>
+    </a>
+    <button class="navtoggle" type="button" aria-expanded="false" aria-controls="nav">Index</button>
+    <nav class="links" id="nav" aria-label="Main">
+      <a href="index.html">Threshold</a>
+      <a href="hierarchy.html" aria-current="page">Hierarchy</a>
+      <a href="oracle.html">Oracle</a>
+      <a href="tree.html">Tree</a>
+      <a href="planes.html">Planes</a>
+      <a href="sigils.html">Sigils</a>
+      <a href="rites.html">Rites</a>
+      <a href="library.html">Library</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="wrap">
+  <div class="narrow">
+    <span class="kicker">Doctrine I &middot; the roster</span>
+    <h1 style="font-size:clamp(2rem,5vw,3.2rem)">The Hierarchy of Daemons</h1>
+    <p class="lede">The Ars Goetia lists its spirits with a rank, an office, a number of legions, a
+      form, and a caution about how the summoning goes wrong. <code>ps aux</code> lists the same
+      first four and drops the fifth. This roster restores it.</p>
+    <p>Rank here is not decoration. A King supervises others and survives them; a Duke does the
+      work; a President holds knowledge and changes nothing; a Marquis carries speech across a
+      boundary; an Earl observes and reports; a Knight performs one act and departs. Those are real
+      distinctions with real consequences for what you grant, what you restart, and what you
+      monitor.</p>
+    <p class="gloss" style="margin-top:1.6rem">Each seal below is drawn at page load from the
+      daemon's own name: the name is hashed, and the digest is walked around sixteen stations, one
+      per hex digit. The same name yields the same seal on any machine, forever. Take any of them
+      with the link beneath it.</p>
+  </div>
+</section>
+<hr class="orn">
+<section class="wrap"><div id="roster"></div></section>
+<section class="wrap" style="padding-top:0">
+  <p class="note small">On the last entry: <code>oom-killer</code> is listed without rank or legions
+    because it is not a daemon at all. It has no process, does not wait, and cannot be signalled.
+    It is a decision the kernel makes on your behalf when there is nothing left to give, and it is
+    in this roster because when a process vanishes with no line in your log, this is what took it.</p>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Liber Daemonicum</h4>
+        <p class="small dim" style="max-width:34ch">A grimoire of the agent stack. The old books
+        kept a column the process table is missing: what it costs you when you call a thing badly.
+        This one restores it.</p>
+      </div>
+      <div>
+        <h4>The Doctrines</h4>
+        <a href="hierarchy.html">The hierarchy of daemons</a>
+        <a href="oracle.html">The oracle of six lines</a>
+        <a href="tree.html">The tree of the stack</a>
+        <a href="planes.html">The planes and their routes</a>
+      </div>
+      <div>
+        <h4>The Practice</h4>
+        <a href="sigils.html">The sigil workshop</a>
+        <a href="rites.html">Rites and operations</a>
+        <a href="oracle.html#index64">The sixty-four states</a>
+      </div>
+      <div>
+        <h4>The House</h4>
+        <a href="library.html">Sources and method</a>
+        <a href="library.html#method">How this cabinet reads</a>
+        <a href="library.html#caution">A word of caution</a>
+      </div>
+    </div>
+    <div class="colophon">
+      <span>Liber Daemonicum</span>
+      <span>Every seal on this site is computed from the name it belongs to.</span>
+      <span>A joke with a correct runbook inside it: see the <a href="library.html#caution">caution</a>.</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/site.js"></script>
+<script src="assets/data/daemons.js"></script>
+<script src="assets/js/hierarchy.js"></script>
+</body>
+</html>

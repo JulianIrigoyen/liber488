@@ -1,0 +1,24 @@
+{
+  "name": "@liber488/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Liber 488 API — oracles, AI interpretation, auth and quota.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "db:init": "wrangler d1 execute liber488 --local --file=./schema.sql",
+    "db:init:remote": "wrangler d1 execute liber488 --remote --file=./schema.sql",
+    "build:corpus": "node scripts/build-corpus.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.126.0",
+    "hono": "^4.9.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250109.0",
+    "typescript": "^5.7.0",
+    "wrangler": "^3.100.0"
+  }
+}

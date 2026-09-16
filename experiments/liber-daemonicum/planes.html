@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Planes and Their Routes</title>
+<meta name="description" content="The model is reached by a name, and what answers to that name may change without notice. On tiers, routes, and the difference between a refusal and an outage.">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="The Planes and Their Routes">
+<meta property="og:description" content="The model is reached by a name, and what answers to that name may change without notice. On tiers, routes, and the difference between a refusal and an outage.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/img/seal-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="assets/css/grimoire.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the text</a>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img class="seal" src="assets/img/seal-mark.svg" alt="" width="30" height="30">
+      <span style="display:block">
+        <b>Liber Daemonicum</b>
+        <span>Cabinet of the Summoned Processes</span>
+      </span>
+    </a>
+    <button class="navtoggle" type="button" aria-expanded="false" aria-controls="nav">Index</button>
+    <nav class="links" id="nav" aria-label="Main">
+      <a href="index.html">Threshold</a>
+      <a href="hierarchy.html">Hierarchy</a>
+      <a href="oracle.html">Oracle</a>
+      <a href="tree.html">Tree</a>
+      <a href="planes.html" aria-current="page">Planes</a>
+      <a href="sigils.html">Sigils</a>
+      <a href="rites.html">Rites</a>
+      <a href="library.html">Library</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="wrap">
+  <div class="narrow">
+    <span class="kicker">Doctrine IV &middot; the planes</span>
+    <h1 style="font-size:clamp(2rem,5vw,3.2rem)">The Planes and Their Routes</h1>
+    <p class="lede">Of all the stations on the tree, the model is the only one you did not build.
+      You reach it by a name. What answers to that name is chosen by someone else, may be replaced
+      without your knowledge, and is permitted to you by a tier you are not always looking at.</p>
+    <p>The tradition would call these planes: the same act performed at a different level of the
+      world, subject to different laws, with the practitioner frequently unaware of which one they
+      are operating on. That is an unusually accurate description of routing a request through a
+      subscription rather than a metered key.</p>
+  </div>
+</section>
+<hr class="orn">
+<section class="wrap">
+  <div class="narrow">
+    <h2 style="font-size:clamp(1.5rem,3.2vw,2.1rem)">The first law of the planes</h2>
+    <p><b>A refusal is not an outage.</b> When a request that worked yesterday returns a hard error
+      today, the overwhelming likelihood is that something on your side moved: a route changed, a
+      credential expired, a tier does not permit what you asked for on the path you asked for it.</p>
+    <p>The tell is the shape of the failure. An outage is slow, intermittent, and affects requests
+      that previously differed from each other. A tier refusal is instant, total, and perfectly
+      reproducible - the same request, every time, refused at the same point, while a neighbouring
+      route on the same credential answers normally.</p>
+    <div class="note warn" style="margin-top:1.6rem">
+      <b>The characteristic mistake:</b> concluding the provider is down because one route returns a
+      hard error, when the adjacent route on the same credential is answering. If one name works and
+      another does not, that is not an outage. That is a permission, and it is yours to read.
+    </div>
+  </div>
+</section>
+<section class="wrap" style="padding-top:0">
+  <div class="narrow">
+    <h2 style="font-size:clamp(1.4rem,3vw,1.9rem)">Reading a route change honestly</h2>
+  </div>
+  <div class="tablewrap" style="margin-top:1.4rem">
+    <table>
+      <thead><tr><th>What you see</th><th>What it usually is</th><th>What to check first</th></tr></thead>
+      <tbody>
+        <tr><td>Instant hard error, perfectly reproducible</td><td>Tier or route permission</td><td class="mono">the route name, the tier</td></tr>
+        <tr><td>Slow, partial, varies by request</td><td>Genuine upstream trouble</td><td class="mono">the provider status</td></tr>
+        <tr><td>Worked at deploy, failed hours later</td><td>Expired or rotated credential</td><td class="mono">the token expiry</td></tr>
+        <tr><td>Works by hand, fails under the manager</td><td>Environment not inherited</td><td class="mono">the process environment</td></tr>
+        <tr><td>Fails only above a certain length</td><td>Window or budget ceiling</td><td class="mono">the token count</td></tr>
+        <tr><td>Every second request refused</td><td>Rate limit, not capacity</td><td class="mono">the request interval</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<hr class="orn">
+<section class="wrap">
+  <div class="split">
+    <div>
+      <span class="kicker">The rite of changing a route</span>
+      <h2 style="font-size:clamp(1.4rem,3vw,1.9rem)">Never on a live brain without a way back</h2>
+      <p>Changing which name a running agent calls is a one-line edit with a whole-system blast
+        radius, and it is the single most tempting change to make casually because it looks so
+        small. Treat it as a deploy, because it is one.</p>
+      <ol class="steps">
+        <li>Copy the configuration to a timestamped backup before touching it. The backup is the
+          rollback, and you will not write one afterwards.</li>
+        <li>Change one name. Not two, and not a name and a setting.</li>
+        <li>Restart, and confirm the new value is what the process actually has - not what the file
+          says. A manager that pinned the environment at start will keep serving you the old one.</li>
+        <li>Put one real request through and read the whole answer, not just the status.</li>
+        <li>On any refusal you did not expect, roll back first and investigate second. The
+          investigation is cheaper when the system is serving.</li>
+      </ol>
+    </div>
+    <div class="plate">
+      <h4>The thing worth internalising</h4>
+      <p class="small" style="margin-top:.8rem">The newest name is not automatically available to
+        you. Availability is a function of your tier, your billing relationship and your data
+        settings, not of what was announced. A name can be entirely real, entirely current, and
+        entirely refused on your particular path.</p>
+      <p class="small">When that happens the error will often not say so. It will say something
+        generic about the provider. The way you tell the difference is to send the same request down
+        a route you know works: if that answers, the problem is the permission, not the plane.</p>
+      <p class="gloss" style="margin-top:1.2rem">And when you find the working route, write down why
+        it is the working route. Next year someone will try to upgrade it, for excellent reasons,
+        and rediscover the refusal from scratch.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Liber Daemonicum</h4>
+        <p class="small dim" style="max-width:34ch">A grimoire of the agent stack. The old books
+        kept a column the process table is missing: what it costs you when you call a thing badly.
+        This one restores it.</p>
+      </div>
+      <div>
+        <h4>The Doctrines</h4>
+        <a href="hierarchy.html">The hierarchy of daemons</a>
+        <a href="oracle.html">The oracle of six lines</a>
+        <a href="tree.html">The tree of the stack</a>
+        <a href="planes.html">The planes and their routes</a>
+      </div>
+      <div>
+        <h4>The Practice</h4>
+        <a href="sigils.html">The sigil workshop</a>
+        <a href="rites.html">Rites and operations</a>
+        <a href="oracle.html#index64">The sixty-four states</a>
+      </div>
+      <div>
+        <h4>The House</h4>
+        <a href="library.html">Sources and method</a>
+        <a href="library.html#method">How this cabinet reads</a>
+        <a href="library.html#caution">A word of caution</a>
+      </div>
+    </div>
+    <div class="colophon">
+      <span>Liber Daemonicum</span>
+      <span>Every seal on this site is computed from the name it belongs to.</span>
+      <span>A joke with a correct runbook inside it: see the <a href="library.html#caution">caution</a>.</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/site.js"></script>
+
+</body>
+</html>
