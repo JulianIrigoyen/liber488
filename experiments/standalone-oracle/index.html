@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Oracle of Changes</title>
+<meta name="description" content="Consult the I Ching properly: hold a question, shake the coins with your own hand, and throw six lines one at a time. All 64 hexagrams with changing lines and the relating hexagram.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Noto+Serif+SC:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/css/oracle.css">
+</head>
+<body>
+<a class="skip" href="#console">Skip to the consultation</a>
+
+<header class="top">
+  <div class="wrap">
+    <span class="brandmark"><span class="han">易</span>The Oracle of Changes</span>
+    <span class="sub">I Ching &middot; coin and yarrow</span>
+    <span class="spacer"></span>
+    <button class="ghostbtn" id="theme" type="button">Light / dark</button>
+  </div>
+</header>
+
+<main id="main">
+<section class="wrap intro">
+  <span class="eyebrow">Zhōu Yì &middot; the Book of Changes</span>
+  <h1>Ask once, and throw it yourself</h1>
+  <p class="lede">The oracle is not a lookup table with a shuffle in front of it. You hold a
+    question, you throw the coins with your own hand, and the figure that comes up is built from
+    that particular act at that particular moment. This tool keeps that structure: the question is
+    committed before anything is thrown, each of the six lines takes its own throw, and the coins
+    are decided by <b>your gesture</b> — the timing and path of your hand — rather than by a random
+    number generator running while you watch.</p>
+</section>
+
+<section class="wrap console" id="console">
+  <div>
+    <div class="panel">
+      <label class="field" for="question">Your question</label>
+      <textarea id="question" rows="3" placeholder="What should I understand about…"></textarea>
+      <p class="qhint" id="qhint">Ask about a situation you are in, not for a yes or no.
+        <em>What should I understand about…</em> works better than <em>Will…</em></p>
+      <div id="repeat" hidden></div>
+
+      <div class="methods" role="radiogroup" aria-label="Method">
+        <label><input type="radio" name="method" value="coins" checked>
+          <span><b>Three coins &nbsp;三錢法</b>
+          <span class="odds">6 · 1/8 &nbsp; 7 · 3/8 &nbsp; 8 · 3/8 &nbsp; 9 · 1/8</span></span></label>
+        <label><input type="radio" name="method" value="yarrow">
+          <span><b>Yarrow stalks &nbsp;蓍草法</b>
+          <span class="odds">6 · 1/16 &nbsp; 7 · 5/16 &nbsp; 8 · 7/16 &nbsp; 9 · 3/16</span></span></label>
+      </div>
+      <p class="small dim" style="margin-top:.7rem">These are not the same oracle. Yarrow makes
+        moving yang three times likelier than moving yin; coins make them equal. Choose before you
+        begin — it cannot be changed mid-consultation.</p>
+    </div>
+
+    <div class="panel" style="margin-top:1rem">
+      <div class="caststage">
+        <div class="coins" id="coins"></div>
+        <div class="castsum" id="castsum"></div>
+        <div class="build" id="build"></div>
+        <div class="shakewrap">
+          <button id="shake" type="button" disabled><span id="shakelabel">Write your question first</span></button>
+          <p class="shakenote">Press and hold, move your hand while you hold, and let go to throw.
+            The movement is the throw — nothing is decided until you release.</p>
+          <button class="ghostbtn" id="motionbtn" type="button">Use device motion too</button>
+          <span id="progress"></span>
+          <button class="ghostbtn" id="reset" type="button" disabled>Start over</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="rail">
+    <div class="panel">
+      <h3>Your journal</h3>
+      <div id="journal"></div>
+    </div>
+    <div class="panel">
+      <h3>On asking</h3>
+      <p class="small dim">A question you have already decided the answer to will produce an
+        answer you have already decided. The tradition's warning is blunt: ask once and receive an
+        answer; ask the same thing three times and you are not asking, you are avoiding.</p>
+      <p class="small dim">The reading is in the changing lines. A cast with none is a description
+        of a situation that is not moving. A cast with several is a situation coming apart and
+        reassembling, and the second hexagram is where it is headed.</p>
+    </div>
+  </aside>
+</section>
+
+<section class="wrap"><div class="reading" id="reading" hidden></div></section>
+</main>
+
+<footer class="foot">
+  <div class="wrap cols">
+    <div>
+      <h3>What is original here</h3>
+      <p>All 64 hexagram texts and all 384 changing-line texts on this site were written for it.
+        They are interpretations, not translations, and they do not reproduce any translator's
+        wording. The framework they fill — King Wen numbering, trigram composition, the six line
+        positions — is the classical structure, roughly three thousand years old.</p>
+      <p>For the source, read a real translation. Wilhelm/Baynes is the one that shaped the
+        Western reception; Legge is older and public domain; Rutt and Shaughnessy are the ones to
+        read if you want the Bronze Age text rather than its Confucian commentary.</p>
+    </div>
+    <div>
+      <h3>Where the numbers come from</h3>
+      <p>Not from a random number generator. Each throw is derived from the motion samples your own
+        hand produces during the shake — sub-millisecond timings, pointer path, and accelerometer
+        data if you enable it. Those samples pass through SHA-256, which acts as a randomness
+        extractor: it preserves the entropy you supplied while producing uniform bits, so the
+        traditional 1/8, 3/8, 3/8, 1/8 distribution comes out exactly right.</p>
+      <p>What that means: the deciding act is yours, it runs through your body, and it is not
+        repeatable. What it does not mean: that this makes the oracle work. That is not a question
+        a web page gets to settle, and this one does not pretend to.</p>
+    </div>
+    <div>
+      <h3>Privacy</h3>
+      <p>Your questions and readings are kept in this browser's local storage and nowhere else.
+        Nothing is transmitted, and nothing is stored on any server. Clearing the journal removes
+        them permanently.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/data/trigrams.js"></script>
+<script src="assets/data/hex-01-16.js"></script>
+<script src="assets/data/hex-17-32.js"></script>
+<script src="assets/data/hex-33-48.js"></script>
+<script src="assets/data/hex-49-64.js"></script>
+<script src="assets/js/oracle.js"></script>
+</body>
+</html>

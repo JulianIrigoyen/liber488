@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 760" width="760" height="760" role="img">
+<circle cx="380" cy="380" r="344" fill="none" stroke="#c9a44c" stroke-width="1" opacity="0.55" stroke-dasharray="4 9"/>
+<path d="M306 130 L454 130 L454 306 L630 306 L630 454 L454 454 L454 630 L306 630 L306 454 L130 454 L130 306 L306 306 Z" fill="none" stroke="#c9a44c" stroke-width="1.4" opacity="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M380 142 L397.63 196.27 L351.47 162.73 L408.53 162.73 L362.37 196.27 Z" fill="none" stroke="#c9a44c" stroke-width="1" opacity="0.7" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="380" y="178" font-family="serif" font-size="17" fill="#efd79a" opacity="0.85" text-anchor="middle" letter-spacing="0" font-weight="normal" font-style="normal">♈</text>
+<path d="M588 350 L605.63 404.27 L559.47 370.73 L616.53 370.73 L570.37 404.27 Z" fill="none" stroke="#c9a44c" stroke-width="1" opacity="0.7" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="588" y="386" font-family="serif" font-size="17" fill="#efd79a" opacity="0.85" text-anchor="middle" letter-spacing="0" font-weight="normal" font-style="normal">♌</text>
+<path d="M380 558 L397.63 612.27 L351.47 578.73 L408.53 578.73 L362.37 612.27 Z" fill="none" stroke="#c9a44c" stroke-width="1" opacity="0.7" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="380" y="594" font-family="serif" font-size="17" fill="#efd79a" opacity="0.85" text-anchor="middle" letter-spacing="0" font-weight="normal" font-style="normal">♐</text>
+<path d="M172 350 L189.63 404.27 L143.47 370.73 L200.53 370.73 L154.37 404.27 Z" fill="none" stroke="#c9a44c" stroke-width="1" opacity="0.7" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="172" y="386" font-family="serif" font-size="17" fill="#efd79a" opacity="0.85" text-anchor="middle" letter-spacing="0" font-weight="normal" font-style="normal">♒</text>
+<circle cx="380" cy="380" r="138" fill="none" stroke="#efd79a" stroke-width="1.1" opacity="0.8"/>
+<circle cx="380" cy="380" r="104" fill="none" stroke="#c9a44c" stroke-width="0.9" opacity="0.6"/>
+<circle cx="380" cy="380" r="62" fill="none" stroke="#c9a44c" stroke-width="0.9" opacity="0.6"/>
+<text x="380" y="263.1" font-family="serif" font-size="15" fill="#efd79a" opacity="0.85" text-anchor="middle" letter-spacing="0" font-weight="normal" font-style="normal" transform="rotate(0 380 263.1)">ל</text>
+<text x="445.96" y="282.47" font-family="serif" font-size="15" fill="#efd79a" opacity="0.85" text-anchor="middle" letter-spacing="0" font-weight="normal" font-style="normal" transform="rotate(32.73 445.96 282.47)">מ</text>
+<text x="490.98" y="334.42" font-family="serif" font-size="15" fill="#efd79a" opacity="0.85" text-anchor="middle" letter-spacing="0" font-weight="normal" font-style="normal" transform="rotate(65.45 490.98 334.42)">נ</text>
+<text x="500.76" y="402.46" font-family="serif" font-size="15" fill="#efd79a" opacity="0.85" text-anchor="middle" letter-spacing="0" font-weight="normal" font-style="normal" transform="rotate(98.18 500.76 402.46)">ס</text>
+<text x="472.2" y="464.99" font-family="serif" font-size="15" fill="#efd79a" opacity="0.85" text-anchor="middle" letter-spacing="0" font-weight="normal" font-style="normal" transform="rotate(130.91 472.2 464.99)">ע</text>
+<text x="414.37" y="502.16" font-family="serif" font-size="15" fill="#efd79a" opacity="0.85" text-anchor="middle" letter-spacing="0" font-weight="normal" font-style="normal" transform="rotate(163.64 414.37 502.16)">פ</text>
+<text x="345.63" y="502.16" font-family="serif" font-size="15" fill="#efd79a" opacity="0.85" text-anchor="middle" letter-spacing="0" font-weight="normal" font-style="normal" transform="rotate(196.36 345.63 502.16)">צ</text>
+<text x="287.8" y="464.99" font-family="serif" font-size="15" fill="#efd79a" opacity="0.85" text-anchor="middle" letter-spacing="0" font-weight="normal" font-style="normal" transform="rotate(229.09 287.8 464.99)">ק</text>
+<text x="259.24" y="402.46" font-family="serif" font-size="15" fill="#efd79a" opacity="0.85" text-anchor="middle" letter-spacing="0" font-weight="normal" font-style="normal" transform="rotate(261.82 259.24 402.46)">ר</text>
+<text x="269.02" y="334.42" font-family="serif" font-size="15" fill="#efd79a" opacity="0.85" text-anchor="middle" letter-spacing="0" font-weight="normal" font-style="normal" transform="rotate(294.55 269.02 334.42)">ש</text>
+<text x="314.04" y="282.47" font-family="serif" font-size="15" fill="#efd79a" opacity="0.85" text-anchor="middle" letter-spacing="0" font-weight="normal" font-style="normal" transform="rotate(327.27 314.04 282.47)">ת</text>
+<text x="397.46" y="302.94" font-family="serif" font-size="15" fill="#efd79a" opacity="0.85" text-anchor="middle" letter-spacing="0" font-weight="normal" font-style="normal" transform="rotate(12 397.46 302.94)">ב</text>
+<text x="455.13" y="347.53" font-family="serif" font-size="15" fill="#efd79a" opacity="0.85" text-anchor="middle" letter-spacing="0" font-weight="normal" font-style="normal" transform="rotate(63.43 455.13 347.53)">ג</text>
+<text x="456.22" y="420.41" font-family="serif" font-size="15" fill="#efd79a" opacity="0.85" text-anchor="middle" letter-spacing="0" font-weight="normal" font-style="normal" transform="rotate(114.86 456.22 420.41)">ד</text>
+<text x="399.91" y="466.71" font-family="serif" font-size="15" fill="#efd79a" opacity="0.85" text-anchor="middle" letter-spacing="0" font-weight="normal" font-style="normal" transform="rotate(166.29 399.91 466.71)">ז</text>
+<text x="328.62" y="451.55" font-family="serif" font-size="15" fill="#efd79a" opacity="0.85" text-anchor="middle" letter-spacing="0" font-weight="normal" font-style="normal" transform="rotate(217.71 328.62 451.55)">כ</text>
+<text x="296.01" y="386.36" font-family="serif" font-size="15" fill="#efd79a" opacity="0.85" text-anchor="middle" letter-spacing="0" font-weight="normal" font-style="normal" transform="rotate(269.14 296.01 386.36)">ע</text>
+<text x="326.65" y="320.22" font-family="serif" font-size="15" fill="#efd79a" opacity="0.85" text-anchor="middle" letter-spacing="0" font-weight="normal" font-style="normal" transform="rotate(320.57 326.65 320.22)">ר</text>
+<text x="380" y="341.44" font-family="serif" font-size="16" fill="#efd79a" opacity="0.9" text-anchor="middle" letter-spacing="0" font-weight="normal" font-style="normal" transform="rotate(0 380 341.44)">א</text>
+<text x="418.11" y="407.44" font-family="serif" font-size="16" fill="#efd79a" opacity="0.9" text-anchor="middle" letter-spacing="0" font-weight="normal" font-style="normal" transform="rotate(120 418.11 407.44)">מ</text>
+<text x="341.89" y="407.44" font-family="serif" font-size="16" fill="#efd79a" opacity="0.9" text-anchor="middle" letter-spacing="0" font-weight="normal" font-style="normal" transform="rotate(240 341.89 407.44)">ש</text>
+<line x1="380" y1="242" x2="380" y2="276" stroke="#c9a44c" stroke-width="0.5" opacity="0.35"/>
+<line x1="418.88" y1="247.59" x2="409.3" y2="280.21" stroke="#c9a44c" stroke-width="0.5" opacity="0.35"/>
+<line x1="454.61" y1="263.91" x2="436.23" y2="292.51" stroke="#c9a44c" stroke-width="0.5" opacity="0.35"/>
+<line x1="484.29" y1="289.63" x2="458.6" y2="311.89" stroke="#c9a44c" stroke-width="0.5" opacity="0.35"/>
+<line x1="505.53" y1="322.67" x2="474.6" y2="336.8" stroke="#c9a44c" stroke-width="0.5" opacity="0.35"/>
+<line x1="516.6" y1="360.36" x2="482.94" y2="365.2" stroke="#c9a44c" stroke-width="0.5" opacity="0.35"/>
+<line x1="516.6" y1="399.64" x2="482.94" y2="394.8" stroke="#c9a44c" stroke-width="0.5" opacity="0.35"/>
+<line x1="505.53" y1="437.33" x2="474.6" y2="423.2" stroke="#c9a44c" stroke-width="0.5" opacity="0.35"/>
+<line x1="484.29" y1="470.37" x2="458.6" y2="448.11" stroke="#c9a44c" stroke-width="0.5" opacity="0.35"/>
+<line x1="454.61" y1="496.09" x2="436.23" y2="467.49" stroke="#c9a44c" stroke-width="0.5" opacity="0.35"/>
+<line x1="418.88" y1="512.41" x2="409.3" y2="479.79" stroke="#c9a44c" stroke-width="0.5" opacity="0.35"/>
+<line x1="380" y1="518" x2="380" y2="484" stroke="#c9a44c" stroke-width="0.5" opacity="0.35"/>
+<line x1="341.12" y1="512.41" x2="350.7" y2="479.79" stroke="#c9a44c" stroke-width="0.5" opacity="0.35"/>
+<line x1="305.39" y1="496.09" x2="323.77" y2="467.49" stroke="#c9a44c" stroke-width="0.5" opacity="0.35"/>
+<line x1="275.71" y1="470.37" x2="301.4" y2="448.11" stroke="#c9a44c" stroke-width="0.5" opacity="0.35"/>
+<line x1="254.47" y1="437.33" x2="285.4" y2="423.2" stroke="#c9a44c" stroke-width="0.5" opacity="0.35"/>
+<line x1="243.4" y1="399.64" x2="277.06" y2="394.8" stroke="#c9a44c" stroke-width="0.5" opacity="0.35"/>
+<line x1="243.4" y1="360.36" x2="277.06" y2="365.2" stroke="#c9a44c" stroke-width="0.5" opacity="0.35"/>
+<line x1="254.47" y1="322.67" x2="285.4" y2="336.8" stroke="#c9a44c" stroke-width="0.5" opacity="0.35"/>
+<line x1="275.71" y1="289.63" x2="301.4" y2="311.89" stroke="#c9a44c" stroke-width="0.5" opacity="0.35"/>
+<line x1="305.39" y1="263.91" x2="323.77" y2="292.51" stroke="#c9a44c" stroke-width="0.5" opacity="0.35"/>
+<line x1="341.12" y1="247.59" x2="350.7" y2="280.21" stroke="#c9a44c" stroke-width="0.5" opacity="0.35"/>
+<circle cx="380" cy="380" r="16" fill="none" stroke="#efd79a" stroke-width="1" opacity="0.9"/>
+</svg>

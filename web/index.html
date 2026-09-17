@@ -2,134 +2,227 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>The Oracle of Changes</title>
-<meta name="description" content="Consult the I Ching properly: hold a question, shake the coins with your own hand, and throw six lines one at a time. All 64 hexagrams with changing lines and the relating hexagram.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Noto+Serif+SC:wght@400;600&display=swap">
-<link rel="stylesheet" href="assets/css/oracle.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liber 488 : Cabinet of the Hidden Sciences</title>
+<meta name="description" content="A reading room for the symbolic tradition: Jung on the archetypes, Wilhelm on the Book of Changes, Steiner, Crowley and Blavatsky, with sigils, seals, spirits and symbols drawn in line and gold.">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="Liber 488 : Cabinet of the Hidden Sciences">
+<meta property="og:description" content="A reading room for the symbolic tradition: Jung on the archetypes, Wilhelm on the Book of Changes, Steiner, Crowley and Blavatsky, with sigils, seals, spirits and symbols drawn in line and gold.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/img/seal-mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/grimoire.css?v=1">
 </head>
 <body>
-<a class="skip" href="#console">Skip to the consultation</a>
+<a class="skip" href="#main">Skip to the text</a>
 
-<header class="top">
+<header class="topbar">
   <div class="wrap">
-    <span class="brandmark"><span class="han">易</span>The Oracle of Changes</span>
-    <span class="sub">I Ching &middot; coin and yarrow</span>
-    <span class="spacer"></span>
-    <button class="ghostbtn" id="theme" type="button">Light / dark</button>
+    <a class="brand" href="index.html">
+      <img class="seal" src="assets/img/seal-mark.svg" alt="" width="30" height="30">
+      <span style="display:block">
+        <b>Liber 488</b>
+        <span>Cabinet of the Hidden Sciences</span>
+      </span>
+    </a>
+    <button class="navtoggle" type="button" aria-expanded="false" aria-controls="nav">Index</button>
+    <nav class="links" id="nav" aria-label="Main">
+        <a href="index.html" aria-current="page">Threshold</a>
+        <a href="archetypes.html">Archetypes</a>
+        <a href="iching.html">I Ching</a>
+        <a href="anthroposophy.html">Anthroposophy</a>
+        <a href="thelema.html">Thelema</a>
+        <a href="theosophy.html">Theosophy</a>
+        <a href="symbols.html">Symbols</a>
+        <a href="spirits.html">Spirits</a>
+        <a href="sigils.html">Sigils</a>
+        <a href="rites.html">Rites</a>
+        <a href="library.html">Library</a>
+    </nav>
   </div>
 </header>
 
 <main id="main">
-<section class="wrap intro">
-  <span class="eyebrow">Zhōu Yì &middot; the Book of Changes</span>
-  <h1>Ask once, and throw it yourself</h1>
-  <p class="lede">The oracle is not a lookup table with a shuffle in front of it. You hold a
-    question, you throw the coins with your own hand, and the figure that comes up is built from
-    that particular act at that particular moment. This tool keeps that structure: the question is
-    committed before anything is thrown, each of the six lines takes its own throw, and the coins
-    are decided by <b>your gesture</b> — the timing and path of your hand — rather than by a random
-    number generator running while you watch.</p>
+<section class="hero">
+  <img class="plate-bg" src="assets/img/plate-hero.svg" alt="" width="820" height="820" aria-hidden="true">
+  <div class="wrap">
+    <span class="kicker">Liber 488 &#183; opened at the first page</span>
+    <h1>The hidden sciences,<br>read as a single language</h1>
+    <p class="sub lede">Five bodies of work sit in this cabinet: Jung on the archetypes,
+      Wilhelm on the Book of Changes, Steiner on the invisible members of the human being,
+      Crowley on will, Blavatsky on the ancient wisdom. They disagree about almost
+      everything. They agree that the soul thinks in images.</p>
+    <p style="margin-top:1.8rem">
+      <a class="btn" href="#doctrines">Enter the cabinet</a>
+      <a class="btn ghost" href="iching.html">Consult the oracle</a>
+    </p>
+  </div>
 </section>
 
-<section class="wrap console" id="console">
-  <div>
-    <div class="panel">
-      <label class="field" for="question">Your question</label>
-      <textarea id="question" rows="3" placeholder="What should I understand about…"></textarea>
-      <p class="qhint" id="qhint">Ask about a situation you are in, not for a yes or no.
-        <em>What should I understand about…</em> works better than <em>Will…</em></p>
-      <div id="repeat" hidden></div>
-
-      <div class="methods" role="radiogroup" aria-label="Method">
-        <label><input type="radio" name="method" value="coins" checked>
-          <span><b>Three coins &nbsp;三錢法</b>
-          <span class="odds">6 · 1/8 &nbsp; 7 · 3/8 &nbsp; 8 · 3/8 &nbsp; 9 · 1/8</span></span></label>
-        <label><input type="radio" name="method" value="yarrow">
-          <span><b>Yarrow stalks &nbsp;蓍草法</b>
-          <span class="odds">6 · 1/16 &nbsp; 7 · 5/16 &nbsp; 8 · 7/16 &nbsp; 9 · 3/16</span></span></label>
-      </div>
-      <p class="small dim" style="margin-top:.7rem">These are not the same oracle. Yarrow makes
-        moving yang three times likelier than moving yin; coins make them equal. Choose before you
-        begin — it cannot be changed mid-consultation.</p>
-    </div>
-
-    <div class="panel" style="margin-top:1rem">
-      <div class="caststage">
-        <div class="coins" id="coins"></div>
-        <div class="castsum" id="castsum"></div>
-        <div class="build" id="build"></div>
-        <div class="shakewrap">
-          <button id="shake" type="button" disabled><span id="shakelabel">Write your question first</span></button>
-          <p class="shakenote">Press and hold, move your hand while you hold, and let go to throw.
-            The movement is the throw — nothing is decided until you release.</p>
-          <button class="ghostbtn" id="motionbtn" type="button">Use device motion too</button>
-          <span id="progress"></span>
-          <button class="ghostbtn" id="reset" type="button" disabled>Start over</button>
-        </div>
-      </div>
-    </div>
+<section id="doctrines" class="wrap">
+  <div class="narrow">
+    <span class="kicker">The five doctrines</span>
+    <h2>Each room keeps its own weather</h2>
+    <p class="lede">Nothing here is harmonised into one system. Jung read the occult as
+      psychology, Crowley read psychology as magick, Steiner claimed direct clairvoyant
+      research, Blavatsky claimed transmission from teachers she would not name, and
+      Wilhelm carried a Chinese book of bronze age divination into German prose that then
+      shaped a century of Western symbolism. Their quarrels are part of the material.</p>
   </div>
 
-  <aside class="rail">
-    <div class="panel">
-      <h3>Your journal</h3>
-      <div id="journal"></div>
-    </div>
-    <div class="panel">
-      <h3>On asking</h3>
-      <p class="small dim">A question you have already decided the answer to will produce an
-        answer you have already decided. The tradition's warning is blunt: ask once and receive an
-        answer; ask the same thing three times and you are not asking, you are avoiding.</p>
-      <p class="small dim">The reading is in the changing lines. A cast with none is a description
-        of a situation that is not moving. A cast with several is a situation coming apart and
-        reassembling, and the second hexagram is where it is headed.</p>
-    </div>
-  </aside>
+  <div class="grid g3" style="margin-top:2.4rem">
+    <a class="card reveal" href="archetypes.html">
+      <img class="ico" src="assets/img/ico-mandala.svg" alt="" width="46" height="46">
+      <span class="num">I &#183; Jung</span>
+      <h3>The Archetypes</h3>
+      <p>Shadow, anima and animus, persona, the Self. The structures that dream us, and
+        the long argument called individuation.</p>
+    </a>
+    <a class="card reveal" href="iching.html">
+      <img class="ico" src="assets/img/ico-hexagram.svg" alt="" width="46" height="46">
+      <span class="num">II &#183; Wilhelm</span>
+      <h3>The Book of Changes</h3>
+      <p>Sixty four hexagrams, the trigrams behind them, and a working oracle you can
+        cast by the coin method here.</p>
+    </a>
+    <a class="card reveal" href="anthroposophy.html">
+      <img class="ico" src="assets/img/ico-lemniscate.svg" alt="" width="46" height="46">
+      <span class="num">III &#183; Steiner</span>
+      <h3>Anthroposophy</h3>
+      <p>Fourfold body, twelve senses, the exercises of the inner path, and a science of
+        the invisible that insisted on rigour.</p>
+    </a>
+    <a class="card reveal" href="thelema.html">
+      <img class="ico" src="assets/img/ico-unicursal.svg" alt="" width="46" height="46">
+      <span class="num">IV &#183; Crowley</span>
+      <h3>Thelema</h3>
+      <p>True will against mere appetite, the grades of the A.'.A.'., the Thoth trumps,
+        and a reading you can draw from them.</p>
+    </a>
+    <a class="card reveal" href="theosophy.html">
+      <img class="ico" src="assets/img/ico-ouroboros.svg" alt="" width="46" height="46">
+      <span class="num">V &#183; Blavatsky</span>
+      <h3>Theosophy</h3>
+      <p>The seven principles of the human being, the planes, karma and cycles, and the
+        claim that all religions are dialects of one doctrine.</p>
+    </a>
+    <a class="card reveal" href="library.html">
+      <img class="ico" src="assets/img/ico-book.svg" alt="" width="46" height="46">
+      <span class="num">VI &#183; Apparatus</span>
+      <h3>The Library</h3>
+      <p>Sources, editions, a note on method, and a plain caution about what this material
+        can and cannot do.</p>
+    </a>
+  </div>
 </section>
 
-<section class="wrap"><div class="reading" id="reading" hidden></div></section>
+<hr class="orn">
+
+<section class="wrap">
+  <div class="split">
+    <div>
+      <span class="kicker">The workshop</span>
+      <h2>Instruments, not decorations</h2>
+      <p>Symbols were never meant to be looked at only. They were meant to be used: cast,
+        traced, cut, spoken, carried. Four rooms in this cabinet are practical.</p>
+      <ul class="orn">
+        <li><b><a href="symbols.html">The lexicon</a></b> gives the planetary, zodiacal and
+          alchemical signs with both their traditional and their psychological readings,
+          and an interactive Tree of Life with its twenty two paths.</li>
+        <li><b><a href="spirits.html">The hierarchies</a></b> lists the seventy two spirits
+          of the Ars Goetia, each with a seal drawn on the spot, beside the seven planetary
+          intelligences and their magic squares.</li>
+        <li><b><a href="sigils.html">The sigil workshop</a></b> turns a statement of intent
+          into a figure by three methods: the rose wheel, the planetary kamea, and the fused
+          monogram. You can download the result.</li>
+        <li><b><a href="rites.html">The rites</a></b> sets out the banishing pentagram, the
+          middle pillar, active imagination and the discipline of the record.</li>
+      </ul>
+    </div>
+    <figure class="figure reveal">
+      <img src="assets/img/plate-rosecross.svg" alt="A rose cross lamen: an equal armed cross with pentagrams on its arms and the twenty two Hebrew letters arranged in three rings at its centre." width="560" height="560">
+      <figcaption>Plate II &#183; the rose cross lamen, three mothers, seven doubles, twelve simples</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="plate reveal" style="text-align:center;padding:clamp(2rem,5vw,3.4rem)">
+    <blockquote style="border:0;margin:0;padding:0;font-size:clamp(1.1rem,2.6vw,1.5rem)">
+      The alchemists were right: there is gold in the base matter. They were wrong about
+      where the retort stood.
+      <cite>The working assumption of this cabinet</cite>
+    </blockquote>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="grid g3">
+    <div class="card reveal">
+      <img class="ico" src="assets/img/ico-eye.svg" alt="" width="46" height="46">
+      <h3>Read as image</h3>
+      <p>A symbol is not a code with one answer at the back of the book. It is a pressure
+        under a picture. The test of a reading is whether it moves something.</p>
+    </div>
+    <div class="card reveal">
+      <img class="ico" src="assets/img/ico-key.svg" alt="" width="46" height="46">
+      <h3>Read historically</h3>
+      <p>Every claim here has a date, an author and an interest. Where a tradition is
+        making a factual claim about the world, this cabinet says so and leaves it standing
+        as a claim.</p>
+    </div>
+    <div class="card reveal">
+      <img class="ico" src="assets/img/ico-chalice.svg" alt="" width="46" height="46">
+      <h3>Read honestly</h3>
+      <p>None of this replaces medicine, law or judgment. The tradition itself is full of
+        warnings about the person who confuses inflation with initiation.</p>
+    </div>
+  </div>
+  <p class="note warn small" style="margin-top:2rem">A note on use: the material in this
+    cabinet is offered for study, reflection and craft. It is not medical, psychological,
+    legal or financial advice, and no ritual here is a substitute for care from a qualified
+    person. See <a href="library.html#caution">the caution</a>.</p>
+</section>
 </main>
 
 <footer class="foot">
-  <div class="wrap cols">
-    <div>
-      <h3>What is original here</h3>
-      <p>All 64 hexagram texts and all 384 changing-line texts on this site were written for it.
-        They are interpretations, not translations, and they do not reproduce any translator's
-        wording. The framework they fill — King Wen numbering, trigram composition, the six line
-        positions — is the classical structure, roughly three thousand years old.</p>
-      <p>For the source, read a real translation. Wilhelm/Baynes is the one that shaped the
-        Western reception; Legge is older and public domain; Rutt and Shaughnessy are the ones to
-        read if you want the Bronze Age text rather than its Confucian commentary.</p>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Liber 488</h4>
+        <p class="small dim" style="max-width:34ch">Cabinet of the Hidden Sciences. A reading room for
+        the symbolic tradition: analytical psychology, the Book of Changes,
+        anthroposophy, Thelema and theosophy, set side by side.</p>
+      </div>
+        <div>
+          <h4>The Doctrines</h4>
+          <a href="archetypes.html">Jung: the archetypes</a>
+          <a href="iching.html">Wilhelm: the I Ching</a>
+          <a href="anthroposophy.html">Steiner: anthroposophy</a>
+          <a href="thelema.html">Crowley: Thelema</a>
+          <a href="theosophy.html">Blavatsky: theosophy</a>
+        </div>
+        <div>
+          <h4>The Practice</h4>
+          <a href="symbols.html">Lexicon of symbols</a>
+          <a href="spirits.html">Spirits and hierarchies</a>
+          <a href="sigils.html">The sigil workshop</a>
+          <a href="rites.html">Rites and operations</a>
+        </div>
+        <div>
+          <h4>The House</h4>
+          <a href="library.html">Library and sources</a>
+          <a href="library.html#method">How this cabinet reads</a>
+          <a href="library.html#caution">A word of caution</a>
+        </div>
     </div>
-    <div>
-      <h3>Where the numbers come from</h3>
-      <p>Not from a random number generator. Each throw is derived from the motion samples your own
-        hand produces during the shake — sub-millisecond timings, pointer path, and accelerometer
-        data if you enable it. Those samples pass through SHA-256, which acts as a randomness
-        extractor: it preserves the entropy you supplied while producing uniform bits, so the
-        traditional 1/8, 3/8, 3/8, 1/8 distribution comes out exactly right.</p>
-      <p>What that means: the deciding act is yours, it runs through your body, and it is not
-        repeatable. What it does not mean: that this makes the oracle work. That is not a question
-        a web page gets to settle, and this one does not pretend to.</p>
-    </div>
-    <div>
-      <h3>Privacy</h3>
-      <p>Your questions and readings are kept in this browser's local storage and nowhere else.
-        Nothing is transmitted, and nothing is stored on any server. Clearing the journal removes
-        them permanently.</p>
+    <div class="colophon">
+      <span>Liber 488</span>
+      <span>Every plate on this site is drawn by the house, in line and gold.</span>
+      <span>Study, not prescription: see the <a href="library.html#caution">caution</a>.</span>
     </div>
   </div>
 </footer>
 
-<script src="assets/data/trigrams.js"></script>
-<script src="assets/data/hex-01-16.js"></script>
-<script src="assets/data/hex-17-32.js"></script>
-<script src="assets/data/hex-33-48.js"></script>
-<script src="assets/data/hex-49-64.js"></script>
-<script src="assets/js/oracle.js"></script>
+  <script src="assets/js/site.js?v=1" defer></script>
 </body>
 </html>

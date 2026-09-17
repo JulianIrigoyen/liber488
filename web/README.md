@@ -1,80 +1,39 @@
-# The Oracle of Changes
+# web/ — the Liber 488 site, with the new oracle
 
-The I Ching module for Liber 488. Currently a standalone static web app; it
-becomes the first oracle in the product.
+This is the live Liber 488 build (11 pages, `assets/css/grimoire.css`, the plates and
+icons) mirrored on 2026-09-16, plus the new I Ching consultation integrated into
+`iching.html` in the site's own idiom. Everything outside the oracle is untouched.
 
-## The idea
+## What changed, and only that
 
-A `Cast` button wired to a random number generator is a vending machine with a
-book attached. In the physical rite the deciding act runs through the querent's
-own body — their hand, their question, that moment. Remove that and you have
-not digitised the oracle, you have replaced it with a shuffle.
+| file | change |
+|---|---|
+| `assets/data/hexagrams.js` | each of the 64 entries gained `lines6` — six original changing-line texts. Names, `cn`, `above`/`below`, judgment, image, counsel: unchanged. |
+| `assets/js/oracle.js` | the cast was rewritten: gesture entropy (SHA-256 extraction) instead of `Math.random()`; a question that is required and locks on the first throw; six separate throws, bottom upward; moving-line texts shown in the card; a "which lines govern" rubric. `card()`, the table of sixty-four and the search are the site's own code, extended not replaced. |
+| `iching.html` | the `#oracle` section: question field, the hold-and-shake control, per-line log. The paragraph claiming the method "uses your browser's random source" was removed because it is no longer true. |
+| `assets/css/grimoire.css` | one appended block for the question field, shake control, question recall and moving-line rows, using the site's own tokens. The changing-line red is `#d2564f`, the value the site's code already used. |
 
-So this tool does not call a random number generator.
+Nothing else in the site was modified.
 
-**Every line is decided by the querent's own gesture.** You press and hold, move
-your hand, and release to throw. The sub-millisecond timings and the path of
-that motion are the entropy — plus accelerometer samples if you grant motion
-access and physically shake the phone. You shake once per line, six times, as
-you would throw coins six times.
+## How casting works
 
-The raw motion is not used directly: human movement is biased and would skew the
-line probabilities. It goes through SHA-256, which acts as a randomness
-extractor — preserving the entropy you supplied while producing uniform bits, so
-the traditional distributions come out exactly right.
+Press and hold the bar, move your hand while holding, release to throw. Each line needs
+its own shake. ~90 motion samples (about a second) are required before a release counts;
+releasing early is refused with "Not shaken enough". Keyboard: focus the bar, hold Space or
+Enter — the hold's timing is the entropy. Phone: "Use device motion too" adds accelerometer
+samples. The pool is hashed with SHA-256 and three bits give three coins (yang 3 / yin 2),
+so the traditional line probabilities hold exactly.
 
-What that claims: the deciding act is yours, it runs through your body, it is not
-repeatable. What it does not claim: that this makes the oracle work. That is not
-a question a web page settles.
+## "Interpret with AI"
 
-## What is implemented
+Appears under a completed reading, on localhost only. It posts the question and the six
+raw values to `http://127.0.0.1:8788/interpret` — the DJINN bridge in `../dev/`. Expect a
+minute or two; each call is a real Slack round trip. The production path is the API's
+`/v1/oracles/iching/interpret` (login + quota); switch `AI_ENDPOINT` in `oracle.js` when
+an Anthropic key is available.
 
-- **Both methods, with their real probabilities.** Coins (6·1/8, 7·3/8, 8·3/8,
-  9·1/8) and yarrow (6·1/16, 7·5/16, 8·7/16, 9·3/16). These are not the same
-  oracle — yarrow makes moving yang three times likelier than moving yin — and
-  neither is presented as the real one.
-- **All 64 hexagrams and all 384 changing-line texts.**
-- **Changing lines and the relating hexagram**, framed as the same situation
-  read again with the moving lines settled, never as a prediction.
-- **A "how to read this cast" rubric** that changes with how many lines moved,
-  labelled as one school's convention rather than settled law.
-- **Commitment before the throw** — the question is required and locks once the
-  first line falls, as does the method.
-- **Repeat-question detection** — ask the same thing within a day and it shows
-  what you drew last time and quotes the tradition's warning back at you.
-- **Journal** in localStorage. Nothing is transmitted.
+## Serve
 
-## Provenance of the text
-
-All 64 hexagram texts and all 384 line texts here were written for this project.
-They are interpretations, not translations, and do not reproduce any
-translator's wording. The framework they fill — King Wen numbering, trigram
-composition, the six line positions — is the classical structure, roughly three
-thousand years old.
-
-For the source, read a real translation. Wilhelm/Baynes shaped the Western
-reception; Legge is older and public domain; Rutt and Shaughnessy are the ones
-for the Bronze Age text rather than its Confucian commentary.
-
-## Files
-
+```bash
+python3 -m http.server 5173 --bind 127.0.0.1      # from this directory
 ```
-index.html
-assets/css/oracle.css
-assets/js/oracle.js          casting, entropy extraction, rendering
-assets/data/trigrams.js
-assets/data/hex-*.js         the corpus, 16 hexagrams per file
-```
-
-The corpus is also the source for `api/src/oracles/iching-data.ts`,
-generated from these files by `api/scripts/build-corpus.mjs`, so web, API and
-native share one set of texts. Run `npm run build:corpus` in `api/` after
-editing any hexagram text.
-
-## Known gaps
-
-- The design is paper-and-cinnabar and does **not** match Liber 488's
-  gold-on-black. Re-skin pending.
-- Not yet wired to the API — no accounts, no AI interpretation.
-- The shake threshold (`REQUIRED = 90` samples, ~1s of movement) has not been
-  tuned against real use.

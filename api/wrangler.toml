@@ -10,7 +10,9 @@ compatibility_flags = ["nodejs_compat"]
 [[d1_databases]]
 binding = "DB"
 database_name = "liber488"
-database_id = "REPLACE_WITH_YOUR_D1_ID"
+# Local dev uses miniflare's own SQLite; replace with the real id
+# from `wrangler d1 create liber488` before deploying.
+database_id = "320c2b78-ad86-414b-b98a-240b500c842a"
 
 [vars]
 ENVIRONMENT = "development"

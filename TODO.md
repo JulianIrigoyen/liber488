@@ -1,89 +1,63 @@
 # Liber 488 — roadmap
 
-Derived from the session of 16 Sep 2026. Ordered by what unblocks what.
+Refreshed 2026-09-17 after the session in `docs/SESSION-2026-09-16.md`. Ordered by what
+unblocks what.
 
-## Blocking — do these first
+## Done on 2026-09-16
 
-- [ ] **Re-skin the oracle in Liber 488's palette.** `web/` is currently
-      paper-and-cinnabar (`--paper #e9e7de` / `--cinnabar #b0331f`); the site is
-      gold-on-black (`--ink #07060a` / `--gold #c9a44c` / `--vellum #e9e1cf`).
-      Keep one rule from the current design: a single saturated colour marks
-      changing lines and nothing else. Map cinnabar → `--blood #8d2233`.
-- [ ] **Bring the API up locally.** Create the D1 database, paste the id into
-      `wrangler.toml`, run `npm run db:init`, set `ANTHROPIC_API_KEY` and
-      `JWT_SECRET`. Nothing else can be tested until this is done.
-- [ ] **First real interpretation end to end.** The interpreter prompt has never
-      run against the live model. Check specifically that the output is plain
-      English — that is the rule most likely to be ignored in practice.
-- [ ] **Measure the true cost per interpretation.** Estimated $0.04–0.08, never
-      measured. Query `ai_usage` after a handful of readings. The free tier's
-      3/day depends on this number being right.
-- [ ] **Wire `web/` to the API.** Sign-in, then an "Interpret with AI" button
-      under the reading that streams the SSE response. Keep the oracle fully
-      usable while signed out.
+- [x] **Oracle integrated into the real site**, in its own idiom (supersedes the earlier
+      "re-skin" item: there is nothing to re-skin, `web/` *is* the site).
+- [x] 384 original changing-line texts merged into the site's `hexagrams.js`; corpora
+      cross-validated (64/64, zero King Wen disagreements).
+- [x] Gesture-entropy casting, six throws, question lock, rubric — verified headless end to end.
+- [x] "Interpret with AI" wired (dev-only) through the DJINN bridge; thread reuse so it
+      does not spam the DM; quality checked on a real reading.
+- [x] Monorepo; git identities split by directory; API typechecks (SDK pinned to a real version).
+
+## Blocking
+
+- [ ] **An Anthropic key for the API.** `api/.dev.vars` holds a placeholder. Until a real
+      key exists, `/v1/oracles/iching/interpret` has never run and the DJINN bridge is the
+      only AI path. Then: first real interpretation, measure the true cost (`ai_usage`
+      records tokens; the $0.04–0.08 figure is an estimate), and flip `AI_ENDPOINT`.
+- [ ] **One interpreter prompt, not two.** The rules live in both
+      `api/src/oracles/interpret.ts` and `dev/djinn-bridge.mjs` and have already drifted
+      slightly. Lift the shared rules into one module before the second oracle exists.
+- [ ] **Deploy `web/` to replace the live static build.** The live site is unchanged; the
+      integrated oracle exists only in this repo. Decide where it is served from.
+- [ ] **Production "Interpret with AI".** The button is localhost-only. Production needs
+      the sign-in flow (magic link) and the quota readout in the page.
 
 ## Platform decisions still open
 
-- [ ] **Native app stack.** Expo/React Native (one codebase, the casting engine
-      and corpus port directly since they are already JS, `expo-sensors` gives
-      real shake) vs SwiftUI (better feel and haptics, iOS only, everything
-      rewritten). Unanswered from this session.
-- [ ] **Where the API is deployed.** Configured for Cloudflare Workers; not
-      decided. Explicitly *not* the droplet.
-- [ ] **Domain.** `liber488.com` is assumed in the magic-link sender address and
-      nowhere else.
-- [ ] **Mail provider for magic links.** Resend is stubbed in `sendMagicLink()`;
-      swap if you prefer another. Dev mode returns the link in the response, so
-      this is not blocking local work.
-- [ ] **Payments** for the adept/magus tiers. Tiers exist in the schema and the
-      rate limiter; nothing charges for them.
-- [ ] **Migration plan for the current site.** The live static site needs to
-      become a client of this API, or be replaced by the new web app.
+- [ ] **Native app stack** — Expo/React Native (engine and corpus port directly; real
+      shake via `expo-sensors`) vs SwiftUI (best feel, iOS-only, rewrite). Unanswered.
+- [ ] **API deploy target** (configured for Cloudflare Workers; not decided; not the droplet).
+- [ ] **Domain** — `liber488.com` is assumed only in the magic-link sender address.
+- [ ] **Mail provider** for magic links (Resend stubbed; dev mode returns the link inline).
+- [ ] **Payments** for adept/magus (tiers exist in schema and limiter; nothing charges).
 
 ## Oracles
 
-- [ ] **Tarot.** Needs the same treatment as the I Ching: the querent's own
-      gesture decides the shuffle and the cut, not a PRNG. Deck data, spread
-      definitions (three-card, Celtic cross), reversals, and 78 original card
-      texts — the corpus is the bulk of the work, as it was here.
-- [ ] **Carta astral reader.** Different shape: needs birth date, exact time and
-      place, plus an ephemeris. Decide between a library (Swiss Ephemeris via
-      WASM) and an external API before designing anything.
-- [ ] **News, AI-boosted.** Least defined. Decide what it actually is before
-      building — a feed with commentary, or something the other oracles read
-      from.
-- [ ] **Generalise the interpreter.** `api/src/oracles/interpret.ts` is I Ching
-      specific. The writing rules (plain language, place the querent, refuse to
-      flatter, never predict) are shared across every oracle — lift those into a
-      common base prompt before writing the second one, not after.
+- [ ] **Tarot** — the querent's gesture drives the shuffle and the cut; 78 original card
+      texts are the bulk of the work, as the 384 were here.
+- [ ] **Carta astral** — needs date, exact time, place, and an ephemeris decision
+      (Swiss Ephemeris via WASM vs an API) before any design.
+- [ ] **News, AI-boosted** — least defined; decide what it *is* first.
+- [ ] **Generalise the interpreter** — see "one prompt, not two" above.
 
-## Quality and polish
+## Quality
 
-- [ ] **Tune the shake threshold.** `REQUIRED = 90` samples, about one second of
-      movement. Never tested for feel by a real hand on a real device.
-- [ ] **Accessibility pass on the shake control.** Keyboard hold works
-      (Space/Enter, timing supplies entropy) but has not been tested with a
-      screen reader, and there is no non-gesture fallback for someone who cannot
-      perform a sustained hold.
-- [ ] **Tests.** There are none. Priority order: `resolve()` against all 64
-      patterns, the relating-hexagram transform, quota enforcement, and that
-      `parseCast` rejects malformed input.
-- [ ] **Abuse and rate limiting beyond quota.** No IP limiting on
-      `/v1/auth/request`, so magic-link mail can be triggered in a loop.
-- [x] ~~**Consolidate into a monorepo.**~~ Done 16 Sep — `api/`, `web/` and
-      `experiments/` are one repo at `code/personal/liber488`, and
-      `api/scripts/build-corpus.mjs` regenerates the typed corpus from the web
-      data files, so it is no longer generated across a repo boundary.
-- [ ] **Fix the typo in the live site's own I Ching page** if it is still there,
-      and check the existing `iching.html` for what is worth keeping before the
-      new module replaces it.
+- [ ] **Tune the shake threshold** (`REQUIRED = 90`, ~1 s) against real hands and phones.
+- [ ] **Accessibility pass** on the shake control (screen reader; a non-gesture fallback).
+- [ ] **Tests** — none in `web/`; in `api/`, priority: `resolve()` over all 64 patterns,
+      the relating-hexagram transform, quota enforcement, `parseCast` rejection.
+- [ ] **IP limiting on `/v1/auth/request`** — magic-link mail can be looped.
+- [ ] **Retrieval quality of readings journal** once accounts exist (server-side journal
+      is stored; nothing reads it back into the page yet).
 
-## Notes worth not losing
+## Not this repo
 
-- The corpus (64 hexagrams, 384 line texts) is original interpretive writing,
-  not a translation. Keep it that way; do not paste in a translator's wording.
-- Casting must never move server-side. It is the whole argument of the product.
-- Two bugs in this session were invisible until a real `npm install` +
-  `tsc --noEmit`: a stale SDK pin (`^0.68.0` vs the actual `0.126.0`, which
-  silently loses adaptive thinking) and Hono's `verify()` needing a third
-  argument. Run the typecheck before believing anything compiles.
+- DJINN's facts memory (fixed and deployed 2026-09-16) and its remaining retrieval-ranking
+  gap: see `packages/djinn/FACTS-MEMORY-FIX.md` in the DJINN release, and
+  `docs/SESSION-2026-09-16.md` here for the pointer.
